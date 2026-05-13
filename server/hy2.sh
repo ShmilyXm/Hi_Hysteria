@@ -1578,6 +1578,16 @@ setHysteriaConfig() {
     else
         addOrUpdateYaml "$yaml_file" "listen" ":${port}"
     fi
+    if [ "${realmMode}" == "true" ]; then
+        addOrUpdateYaml "$yaml_file" "realm.stunServers[0]" "stun.nextcloud.com:3478"
+        addOrUpdateYaml "$yaml_file" "realm.stunServers[1]" "global.stun.twilio.com:3478"
+        addOrUpdateYaml "$yaml_file" "realm.stunTimeout" "5s"
+        addOrUpdateYaml "$yaml_file" "realm.punchTimeout" "5s"
+        addOrUpdateYaml "$yaml_file" "realm.heartbeatInterval" "30s"
+        addOrUpdateYaml "$yaml_file" "realm.insecure" "false"
+    else
+        yq eval 'del(.realm)' -i "$yaml_file"
+    fi
     addOrUpdateYaml "$yaml_file" "auth.type" "password"
     addOrUpdateYaml "$yaml_file" "auth.password" "${auth_secret}"
     addOrUpdateYaml "$yaml_file" "ignoreClientBandwidth" "${ignore_client_bandwidth}"
@@ -2708,6 +2718,8 @@ generate_client_config() {
     obfs_pass=$(getYamlValue "/etc/hihy/conf/config.yaml" "obfs.salamander.password")
     if [ -n "${obfs_pass}" ]; then
         obfs_status="true"
+    else
+        obfs_status="false"
     fi
     SRW=$(getYamlValue "/etc/hihy/conf/config.yaml" "quic.initStreamReceiveWindow")
     CRW=$(getYamlValue "/etc/hihy/conf/config.yaml" "quic.initConnReceiveWindow")
@@ -2758,6 +2770,18 @@ generate_client_config() {
         addOrUpdateYaml "$client_configfile" "server" "hysteria2://${auth_secret}@${serverAddress}:${port},${serverPortRange}/"
     else
         addOrUpdateYaml "$client_configfile" "server" "hysteria2://${auth_secret}@${serverAddress}:${port}/"
+    fi
+    if [ "${realmMode}" == "true" ]; then
+        addOrUpdateYaml "$client_configfile" "realm.stunServers[0]" "stun.chat.bilibili.com:3478"
+        addOrUpdateYaml "$client_configfile" "realm.stunServers[1]" "stun.miwifi.com:3478"
+        addOrUpdateYaml "$client_configfile" "realm.stunServers[2]" "stun.nextcloud.com:3478"
+        addOrUpdateYaml "$client_configfile" "realm.stunServers[3]" "global.stun.twilio.com:3478"
+        addOrUpdateYaml "$client_configfile" "realm.stunTimeout" "5s"
+        addOrUpdateYaml "$client_configfile" "realm.punchTimeout" "5s"
+        addOrUpdateYaml "$client_configfile" "realm.heartbeatInterval" "30s"
+        addOrUpdateYaml "$client_configfile" "realm.insecure" "false"
+    else
+        yq eval 'del(.realm)' -i "$client_configfile"
     fi
 
     addOrUpdateYaml "$client_configfile" "tls.sni" "${tls_sni}"
@@ -3044,6 +3068,8 @@ EOF
     obfs_pass=$(getYamlValue "/etc/hihy/conf/config.yaml" "obfs.salamander.password")
     if [ -n "${obfs_pass}" ]; then
         obfs_status="true"
+    else
+        obfs_status="false"
     fi
     SRW=$(getYamlValue "/etc/hihy/conf/config.yaml" "quic.initStreamReceiveWindow")
     CRW=$(getYamlValue "/etc/hihy/conf/config.yaml" "quic.initConnReceiveWindow")
