@@ -28,7 +28,7 @@ getI18nSchemaVersion() {
 
 refreshI18nFile() {
     local lang="$1"
-    local base_url="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/refs/heads/main"
+    local base_url="https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main"
     mkdir -p "$HIHY_I18N_DIR"
     local url="${base_url}/server/i18n/${lang}.json"
     local out="${HIHY_I18N_DIR}/hy2.sh.${lang}.json"

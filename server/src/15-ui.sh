@@ -161,7 +161,7 @@ show_menu() {
 
     echo -e " \033[1;36m╭───────────────────────────────────────────╮\033[0m"
     menuBoxLine "$(i18n menu_title) ${hihyV}"
-    menuBoxLine "https://github.com/emptysuns/Hi_Hysteria"
+    menuBoxLine "https://github.com/kaecho/Hi_Hysteria"
     echo -e " \033[1;36m╰───────────────────────────────────────────╯\033[0m"
 
     # 状态行:服务状态 + 内核版本

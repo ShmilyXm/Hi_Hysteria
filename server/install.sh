@@ -1,9 +1,9 @@
 #!/bin/bash
 HIHY_BIN_LINK="${HIHY_BIN_LINK:-/usr/bin/hihy}"
-HIHY_HYSTERIA2_URL="${HIHY_HYSTERIA2_URL:-https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/refs/heads/main/server/hy2.sh}"
-HIHY_HYSTERIA1_URL="${HIHY_HYSTERIA1_URL:-https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/refs/heads/v1/server/install.sh}"
+HIHY_HYSTERIA2_URL="${HIHY_HYSTERIA2_URL:-https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/hy2.sh}"
+HIHY_HYSTERIA1_URL="${HIHY_HYSTERIA1_URL:-https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/v1/server/install.sh}"
 HIHY_I18N_SCHEMA="${HIHY_I18N_SCHEMA:-1}"
-HIHY_I18N_BASE_URL="${HIHY_I18N_BASE_URL:-https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/refs/heads/main}"
+HIHY_I18N_BASE_URL="${HIHY_I18N_BASE_URL:-https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main}"
 HIHY_I18N_DIR="${HIHY_I18N_DIR:-/etc/hihy/i18n}"
 HIHY_I18N_CONF="${HIHY_I18N_CONF:-/etc/hihy/conf/i18n.conf}"
 HIHY_DEFAULT_LANG="${HIHY_DEFAULT_LANG:-en}"

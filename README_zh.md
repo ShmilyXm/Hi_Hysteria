@@ -28,7 +28,7 @@ mihomo/sing-box 不支持 mimic，仅输出原生配置
 
 [历史改进](md/logs.md)
 
-[Hysteria V1版本](https://github.com/emptysuns/Hi_Hysteria/tree/v1)
+[Hysteria V1版本](https://github.com/kaecho/Hi_Hysteria/tree/v1)
 
 ## 一·简介
 
@@ -127,7 +127,7 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
 ```
  -------------------------------------------
 |**********      Hi Hysteria       **********|
-|**********    Author: emptysuns   **********|
+|**********    Author: kaecho   **********|
 ||**********   Version: ver1.18     **********||
  -------------------------------------------
 Tips: hihy  命令再次运行本脚本.
@@ -450,7 +450,7 @@ Starting hihy...
 提示: Realm模式暂不支持ClashMeta配置,请使用上方分享链接或原生配置文件。 
 
 📄 3、[推荐] [Nekoray/V2rayN/NekoBoxforAndroid]原生配置文件,更新最快、参数最全、效果最好。文件地址: ./Hy2-roms-v2rayN.yaml  
-客户端使用教程: https://github.com/emptysuns/Hi_Hysteria/blob/main/md/client.md 
+客户端使用教程: https://github.com/kaecho/Hi_Hysteria/blob/main/md/client.md 
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓COPY↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 
 server: realm://public@realm.hy2.io/ab747d7f-03a7-4bf7-982c-79967bae7056
 auth: a754799f-ac2a-46ff-b82a-d6141b1a2769

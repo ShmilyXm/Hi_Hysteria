@@ -41,7 +41,7 @@ QUIC比原生TCP对硬件的开销要大很多，往往很多时候限制你的�
 * 你没有打开云平台的防火墙，很多时候本机防火墙和云防火墙是分开的，hihy会自动打开本地防火墙，云防火墙需要你手动启动，关于启动说明看[这里](firewall.md)
 * 你本地使用的ISP限制严格无法通行非常规udp协议，请切换协议类型尝试或者用faketcp
 * 配置错误没有察觉，请重新检查一遍
-* 你的IDC未被黑名单收集，请到此[issue](https://github.com/emptysuns/Hi_Hysteria/issues/9)提交
+* 你的IDC未被黑名单收集，请到此[issue](https://github.com/kaecho/Hi_Hysteria/issues/9)提交
 
 #### 3.提示不支持此系统怎么办？
 

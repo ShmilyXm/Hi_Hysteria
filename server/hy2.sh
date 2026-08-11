@@ -16,8 +16,8 @@ HIHY_BIN_LINK="${HIHY_BIN_LINK:-/usr/bin/hihy}"
 HIHY_YQ_BIN="${HIHY_YQ_BIN:-/usr/bin/yq}"
 HIHY_PID_FILE="${HIHY_PID_FILE:-/var/run/hihy.pid}"
 HIHY_RC_LOCAL="${HIHY_RC_LOCAL:-/etc/rc.local}"
-HIHY_REMOTE_SCRIPT_URL="${HIHY_REMOTE_SCRIPT_URL:-https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/refs/heads/main/server/hy2.sh}"
-HIHY_REMOTE_SCRIPT_MIRROR_URL="${HIHY_REMOTE_SCRIPT_MIRROR_URL:-https://cdn.jsdelivr.net/gh/emptysuns/Hi_Hysteria@main/server/hy2.sh}"
+HIHY_REMOTE_SCRIPT_URL="${HIHY_REMOTE_SCRIPT_URL:-https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/hy2.sh}"
+HIHY_REMOTE_SCRIPT_MIRROR_URL="${HIHY_REMOTE_SCRIPT_MIRROR_URL:-https://cdn.jsdelivr.net/gh/kaecho/Hi_Hysteria@main/server/hy2.sh}"
 HIHY_VERSION_STATUS_FILE="${HIHY_VERSION_STATUS_FILE:-$HIHY_ROOT_DIR/result/version-check.state}"
 HIHY_VERSION_CHECK_LOCK_FILE="${HIHY_VERSION_CHECK_LOCK_FILE:-$HIHY_ROOT_DIR/result/version-check.lock}"
 HIHY_VERSION_CHECK_TTL="${HIHY_VERSION_CHECK_TTL:-21600}"
@@ -55,7 +55,7 @@ getI18nSchemaVersion() {
 
 refreshI18nFile() {
     local lang="$1"
-    local base_url="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/refs/heads/main"
+    local base_url="https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main"
     mkdir -p "$HIHY_I18N_DIR"
     local url="${base_url}/server/i18n/${lang}.json"
     local out="${HIHY_I18N_DIR}/hy2.sh.${lang}.json"
@@ -292,7 +292,7 @@ show_menu() {
 
     echo -e " \033[1;36m╭───────────────────────────────────────────╮\033[0m"
     menuBoxLine "$(i18n menu_title) ${hihyV}"
-    menuBoxLine "https://github.com/emptysuns/Hi_Hysteria"
+    menuBoxLine "https://github.com/kaecho/Hi_Hysteria"
     echo -e " \033[1;36m╰───────────────────────────────────────────╯\033[0m"
 
     # 状态行:服务状态 + 内核版本
