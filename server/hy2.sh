@@ -1,5 +1,5 @@
 #!/bin/bash
-hihyV="ver1.18"
+hihyV="ver1.19"
 # =============================================================================
 # GENERATED FILE — DO NOT EDIT.
 # Source lives in server/src/*.sh. Edit there and run: bash scripts/build.sh
