@@ -2,6 +2,14 @@
 
 [English](README_en.md) | [中文](README.md) | [فارسی](README_fa.md) | **Русский**
 
+##### (2026/08/23) ver1.20
+
+```
+Исправлено получение последней версии hysteria после переименования репозитория GitHub
+HEAD теперь следует редиректам, загрузка ядра снова работает
+```
+
+
 ##### (2026/08/07) ver1.18
 
 ```
@@ -115,7 +123,7 @@ mihomo/sing-box не поддерживают mimic — только натив�
 
 ```
 su - root # переключиться на root.
-bash <(curl -fsSL https://git.io/hysteria.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh)
 ```
 
 ### Настройка
@@ -128,7 +136,7 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
  -------------------------------------------
 |**********      Hi Hysteria       **********|
 |**********    Author: kaecho   **********|
-||**********   Version: ver1.18     **********||
+||**********   Version: ver1.20     **********||
  -------------------------------------------
 Совет: команда hihy  для повторного запуска этого скрипта.
 ............................................. 

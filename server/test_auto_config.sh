@@ -221,6 +221,33 @@ load_funcs() { source "$REPO_ROOT/server/hy2.sh"; }
     exit $FAIL
 ) || FAIL=1
 
+
+# ---------- getLatestHysteriaVersion: 跟随 GitHub 仓库重命名 301 再取 tag ----------
+(
+    load_funcs
+    tmp=$(mktemp -d)
+    cat >"$tmp/curl" <<'EOF'
+#!/bin/sh
+follow=0
+for arg in "$@"; do
+    [ "$arg" = "-L" ] && follow=1
+    [ "$arg" = "--location" ] && follow=1
+done
+printf 'HTTP/2 301\r\nlocation: https://github.com/HyNetworks/hysteria/releases/latest\r\n\r\n'
+if [ "$follow" = 1 ]; then
+    printf 'HTTP/2 302\r\nlocation: https://github.com/HyNetworks/hysteria/releases/tag/app/v2.12.2\r\n\r\n'
+    printf 'HTTP/2 200\r\n\r\n'
+fi
+exit 0
+EOF
+    chmod +x "$tmp/curl"
+    PATH="$tmp:$PATH"
+    got=$(getLatestHysteriaVersion) || got=""
+    [ "$got" = "app/v2.12.2" ] && pass "hysteria version follows github repo redirect" || fail "hysteria version got='$got'"
+    rm -rf "$tmp"
+    exit $FAIL
+) || FAIL=1
+
 if [ "$FAIL" -eq 0 ]; then echo "ALL auto_config TESTS PASSED"; else
     echo "SOME auto_config TESTS FAILED" >&2
     exit 1

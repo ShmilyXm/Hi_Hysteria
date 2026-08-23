@@ -7,7 +7,7 @@
 全新机器（连 hihy 都没装）：
 
 ```bash
-bash <(curl -fsSL https://git.io/hysteria.sh) --auto
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh) --auto
 ```
 
 已安装 hihy：

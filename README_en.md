@@ -2,6 +2,14 @@
 
 **English** | [中文](README.md) | [فارسی](README_fa.md) | [Русский](README_ru.md)
 
+##### (2026/08/23) ver1.20
+
+```
+Fix latest hysteria version lookup after GitHub repo rename
+HEAD now follows redirects so core download works
+```
+
+
 ##### (2026/08/07) ver1.18
 
 ```
@@ -115,7 +123,7 @@ There may be bugs — please file an issue if you find any. Stars welcome! Your 
 
 ```
 su - root # switch to root user.
-bash <(curl -fsSL https://git.io/hysteria.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh)
 ```
 
 ### Configuration
@@ -128,7 +136,7 @@ You can directly invoke functions by number, e.g. `hihy 5` restarts hysteria2.
  -------------------------------------------
 |**********      Hi Hysteria       **********|
 |**********    Author: kaecho   **********|
-||**********   Version: ver1.18     **********||
+||**********   Version: ver1.20     **********||
  -------------------------------------------
 Tips: hihy  command to run this script again.
 ............................................. 

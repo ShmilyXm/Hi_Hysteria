@@ -2,6 +2,14 @@
 
 [English](README_en.md) | **中文** | [فارسی](README_fa.md) | [Русский](README_ru.md)
 
+##### (2026/08/23) ver1.20
+
+```
+修复 GitHub 仓库重命名后无法获取 hysteria 最新版本
+HEAD 跟随重定向,安装可正常下载内核
+```
+
+
 ##### (2026/08/07) ver1.18
 
 ```
@@ -121,7 +129,7 @@ mihomo/sing-box 不支持 mimic，仅输出原生配置
 
 ```
 su - root #switch to root user.
-bash <(curl -fsSL https://git.io/hysteria.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh)
 ```
 
 ### 一键安装(零交互)
@@ -129,7 +137,7 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
 不想逐项回答配置问题？一条命令自动完成全部安装(随机端口 + UUID 密码 + 自签证书 pinSHA256 校验 + BBR，默认不启用伪装):
 
 ```
-bash <(curl -fsSL https://git.io/hysteria.sh) --auto
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh) --auto
 ```
 
 已安装 hihy 后也可执行 `hihy autoinstall`(菜单选项 `16`)。支持环境变量定制(端口/密码/伪装等)，详见 [一键安装文档](md/onekey.md)。
@@ -142,7 +150,7 @@ bash <(curl -fsSL https://git.io/hysteria.sh) --auto
 
 ```
  ╭───────────────────────────────────────────╮
- │            Hi Hysteria ver1.18            │
+ │            Hi Hysteria ver1.20            │
  │ https://github.com/kaecho/Hi_Hysteria  │
  ╰───────────────────────────────────────────╯
   ● 运行中 │ 内核: v2.9.1

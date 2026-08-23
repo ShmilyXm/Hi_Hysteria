@@ -1,5 +1,5 @@
 #!/bin/bash
-hihyV="ver1.19"
+hihyV="ver1.20"
 # =============================================================================
 # GENERATED FILE — DO NOT EDIT.
 # Source lives in server/src/*.sh. Edit there and run: bash scripts/build.sh
@@ -440,7 +440,8 @@ fetchRemoteHeadersFromSources() {
     local response
 
     for url in "$@"; do
-        if response=$(curl -fsSI --connect-timeout "$HIHY_REMOTE_CONNECT_TIMEOUT" --max-time "$HIHY_REMOTE_MAX_TIME" "$url" 2>/dev/null); then
+        # -L: GitHub /releases/latest 可能先 301 到新仓库,再 302 到 tag/;不跟随则 Location 里没有 tag/
+        if response=$(curl -fsSI -L --connect-timeout "$HIHY_REMOTE_CONNECT_TIMEOUT" --max-time "$HIHY_REMOTE_MAX_TIME" "$url" 2>/dev/null); then
             printf '%s' "$response"
             return 0
         fi
@@ -1046,10 +1047,12 @@ getLatestHihyVersion() {
 }
 
 getLatestHysteriaVersion() {
-    local headers
+    local headers tag
 
     headers=$(fetchRemoteHeadersFromSources "https://github.com/apernet/hysteria/releases/latest") || return 1
-    printf '%s\n' "$headers" | grep -i '^location:' | grep -o 'tag/[^[:space:]]*' | sed 's/tag\///;s/\r//;s/ //g' | head -n 1
+    tag=$(printf '%s\n' "$headers" | grep -i '^location:' | grep -o 'tag/[^[:space:]]*' | sed 's/tag\///;s/\r//;s/ //g' | head -n 1)
+    [ -n "$tag" ] || return 1
+    printf '%s\n' "$tag"
 }
 
 getLocalHysteriaVersion() {
@@ -2849,12 +2852,12 @@ downloadHysteriaCore() {
     local version
     version=$(getLatestHysteriaVersion)
 
-    echo -e "$(i18n latest_hysteria_version) $(echoColor red "${version}")\n$(i18n core_downloading)"
-
     if [ -z "$version" ]; then
         echoColor red "$(i18n network_error_get_latest_version)"
         return 1
     fi
+
+    echo -e "$(i18n latest_hysteria_version) $(echoColor red "${version}")\n$(i18n core_downloading)"
 
     local arch
     arch=$(getHysteriaCoreArch)

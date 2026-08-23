@@ -7,10 +7,12 @@ getLatestHihyVersion() {
 }
 
 getLatestHysteriaVersion() {
-    local headers
+    local headers tag
 
     headers=$(fetchRemoteHeadersFromSources "https://github.com/apernet/hysteria/releases/latest") || return 1
-    printf '%s\n' "$headers" | grep -i '^location:' | grep -o 'tag/[^[:space:]]*' | sed 's/tag\///;s/\r//;s/ //g' | head -n 1
+    tag=$(printf '%s\n' "$headers" | grep -i '^location:' | grep -o 'tag/[^[:space:]]*' | sed 's/tag\///;s/\r//;s/ //g' | head -n 1)
+    [ -n "$tag" ] || return 1
+    printf '%s\n' "$tag"
 }
 
 getLocalHysteriaVersion() {

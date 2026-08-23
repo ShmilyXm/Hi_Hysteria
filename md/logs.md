@@ -1,4 +1,12 @@
 # Hi Hysteria
+##### (2026/08/23) ver1.20
+
+```
+修复 GitHub 仓库重命名后无法获取 hysteria 最新版本,安装卡在下载内核。
+
+1、fetchRemoteHeadersFromSources 跟随重定向(curl -L)。apernet/hysteria 的 /releases/latest 现先 301 到 HyNetworks/hysteria,原先 HEAD 不跟随,Location 里没有 tag/,版本号为空后报"在 Github 上获取 hysteria 最新版本失败"
+```
+
 ##### (2026/08/07) ver1.18
 
 ```

@@ -2,6 +2,14 @@
 
 [English](README_en.md) | [中文](README.md) | **فارسی** | [Русский](README_ru.md)
 
+##### (2026/08/23) ver1.20
+
+```
+رفع مشکل دریافت آخرین نسخه hysteria پس از تغییر نام مخزن GitHub
+HEAD اکنون redirect را دنبال می‌کند تا دانلود هسته کار کند
+```
+
+
 ##### (2026/08/07) ver1.18
 
 ```
@@ -115,7 +123,7 @@ mihomo/sing-box از mimic پشتیبانی نمی‌کنند — فقط پیک�
 
 ```
 su - root # تغییر به کاربر root.
-bash <(curl -fsSL https://git.io/hysteria.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh)
 ```
 
 ### پیکربندی
@@ -128,7 +136,7 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
  -------------------------------------------
 |**********      Hi Hysteria       **********|
 |**********    Author: kaecho   **********|
-||**********   Version: ver1.18     **********||
+||**********   Version: ver1.20     **********||
  -------------------------------------------
 نکته: دستور hihy  برای اجرای مجدد این اسکریپت.
 ............................................. 

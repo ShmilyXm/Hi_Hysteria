@@ -2,6 +2,14 @@
 
 [English](README_en.md) | **中文** | [فارسی](README_fa.md) | [Русский](README_ru.md)
 
+##### (2026/08/23) ver1.20
+
+```
+修复 GitHub 仓库重命名后无法获取 hysteria 最新版本
+HEAD 跟随重定向,安装可正常下载内核
+```
+
+
 ##### (2026/08/07) ver1.18
 
 ```
@@ -115,7 +123,7 @@ mihomo/sing-box 不支持 mimic，仅输出原生配置
 
 ```
 su - root #switch to root user.
-bash <(curl -fsSL https://git.io/hysteria.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/kaecho/Hi_Hysteria/refs/heads/main/server/install.sh)
 ```
 
 ### 配置过程
@@ -128,7 +136,7 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
  -------------------------------------------
 |**********      Hi Hysteria       **********|
 |**********    Author: kaecho   **********|
-||**********   Version: ver1.18     **********||
+||**********   Version: ver1.20     **********||
  -------------------------------------------
 Tips: hihy  命令再次运行本脚本.
 ............................................. 

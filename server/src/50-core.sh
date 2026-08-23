@@ -20,12 +20,12 @@ downloadHysteriaCore() {
     local version
     version=$(getLatestHysteriaVersion)
 
-    echo -e "$(i18n latest_hysteria_version) $(echoColor red "${version}")\n$(i18n core_downloading)"
-
     if [ -z "$version" ]; then
         echoColor red "$(i18n network_error_get_latest_version)"
         return 1
     fi
+
+    echo -e "$(i18n latest_hysteria_version) $(echoColor red "${version}")\n$(i18n core_downloading)"
 
     local arch
     arch=$(getHysteriaCoreArch)

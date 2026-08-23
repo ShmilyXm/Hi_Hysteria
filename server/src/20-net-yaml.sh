@@ -92,7 +92,8 @@ fetchRemoteHeadersFromSources() {
     local response
 
     for url in "$@"; do
-        if response=$(curl -fsSI --connect-timeout "$HIHY_REMOTE_CONNECT_TIMEOUT" --max-time "$HIHY_REMOTE_MAX_TIME" "$url" 2>/dev/null); then
+        # -L: GitHub /releases/latest 可能先 301 到新仓库,再 302 到 tag/;不跟随则 Location 里没有 tag/
+        if response=$(curl -fsSI -L --connect-timeout "$HIHY_REMOTE_CONNECT_TIMEOUT" --max-time "$HIHY_REMOTE_MAX_TIME" "$url" 2>/dev/null); then
             printf '%s' "$response"
             return 0
         fi
