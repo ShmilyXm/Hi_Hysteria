@@ -2,6 +2,9 @@
 
 [English](README_en.md) | **中文** | [فارسی](README_fa.md) | [Русский](README_ru.md)
 
+服务端： https://github.com/kaecho/Hi_Hysteria
+客户端： 安卓 NekoBox， 苹果小火箭，桌面端Clash Verge
+
 ##### (2026/08/23) ver1.20
 
 ```
